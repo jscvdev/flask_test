@@ -3,6 +3,7 @@ FROM python:3.10-slim
 
 # Install system dependencies, including libGL for OpenCV and other required packages
 RUN apt-get update && apt-get install -y \
+    libgl1 \
     libgl1-mesa-glx \
     libglib2.0-0 \
     libsm6 \
@@ -11,7 +12,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/* \
     # Check if libGL is installed
     && ldconfig -p | grep libGL
-    
+
 # Set the working directory inside the container
 WORKDIR /app
 
