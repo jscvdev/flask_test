@@ -8,8 +8,10 @@ RUN apt-get update && apt-get install -y \
     libsm6 \
     libxext6 \
     libxrender1 \
-    && rm -rf /var/lib/apt/lists/*
-
+    && rm -rf /var/lib/apt/lists/* \
+    # Check if libGL is installed
+    && ldconfig -p | grep libGL
+    
 # Set the working directory inside the container
 WORKDIR /app
 
