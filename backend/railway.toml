@@ -1,0 +1,17 @@
+[build]
+builder = "nixpacks"
+
+[deploy]
+startCommand = "gunicorn app:app"
+healthcheckPath = "/health"
+healthcheckTimeout = 100
+
+[nixpacks]
+aptPackages = ["libgl1-mesa-glx", "libglib2.0-0"]
+
+[phases.setup]
+nixPkgs = ["pkg-config"]
+
+[phases.install]
+dependsOn = ["setup"]
+cmds = ["pip install --upgrade pip setuptools wheel", "pip install -r requirements.txt"]
