@@ -5,7 +5,7 @@ nixPkgs = ["python311", "python311Packages.pip", "libGL", "libGLU", "mesa"]
 cmds = [
   "python -m venv /app/venv",
   "/app/venv/bin/pip install --upgrade pip",
-  "/app/venv/bin/pip install -r requirements.txt"
+  "/app/venv/bin/pip install --no-deps -r requirements.txt"
 ]
 
 [start]
