@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 06a031363c2b8679a1f8a6b487f2f322801ec8b0
 FROM python:3.11-slim
 
 RUN apt-get update && apt-get install -y \
