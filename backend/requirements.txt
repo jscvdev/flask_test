@@ -1,10 +1,1 @@
-setuptools
-wheel
-scipy
-flask==2.3.2
-werkzeug==2.0.3
-flask-cors==3.0.10
-numpy>=1.24.0
-opencv-python-headless==4.8.1.78
-mediapipe==0.10.21
-gunicorn==20.1.0
+Flask==2.3.2
